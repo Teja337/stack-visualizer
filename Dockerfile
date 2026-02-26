@@ -4,9 +4,11 @@ WORKDIR /app
 
 COPY . .
 
+# give permission to maven wrapper
 RUN chmod +x mvnw
+
+# build jar
 RUN ./mvnw clean package -DskipTests
 
-EXPOSE 8080
-
-CMD ["java", "-jar", "target/*.jar"]
+# run jar automatically (no need to guess jar name)
+CMD java -jar target/*.jar
