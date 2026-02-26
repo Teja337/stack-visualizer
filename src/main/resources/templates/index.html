@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stack Visualizer</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="dark">
+
+<!-- THEME BUTTON -->
+<button id="themeToggle">🌙</button>
+
+<div class="container">
+
+<h1>🚀 Stack Visualizer</h1>
+
+<!-- STACK TYPE -->
+<div class="toggle">
+
+<button id="arrayBtn" class="active" onclick="changeType('array')">
+Array Stack
+</button>
+
+<button id="linkedBtn" onclick="changeType('linked')">
+Linked Stack
+</button>
+
+<input type="hidden" id="type" value="array">
+
+<!-- STACK SIZE INPUT (ARRAY ONLY) -->
+<input type="number" id="stackSize" placeholder="Enter stack size">
+</div>
+
+<!-- INPUT CONTROLS -->
+<div class="controls">
+<input type="number" id="value" placeholder="Enter value">
+
+<button onclick="pushValue()">Push</button>
+<button onclick="popValue()">Pop</button>
+<button onclick="peekStack()">Peek</button>
+<button onclick="clearStack()">Clear</button>
+</div>
+
+<!-- VISUALIZER -->
+<div class="stack-wrapper">
+<div id="visualizer"></div>
+</div>
+
+<!-- HISTORY -->
+<div class="history">
+<h3>Operations</h3>
+<ul id="historyList"></ul>
+</div>
+
+</div>
+
+<!-- PEEK MODAL -->
+<div id="peekModal" class="modal">
+<div class="modal-content">
+<h2>Top Element</h2>
+<p id="peekValue"></p>
+<button onclick="closePeek()">OK</button>
+</div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
